@@ -1,0 +1,140 @@
+.App {
+  text-align: center;
+}
+
+
+.App {
+  /* background-color: #282c34; */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+#arrow-svg{
+  width: 40px;
+  cursor: pointer;
+}
+
+.input-name{
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+
+#your-name{
+  outline: none;
+  border-radius: 3px;
+  border: none;
+  width: 30Vw;
+  height: 30px;
+  padding: 5px 5px 5px 10px;
+  box-shadow: -3px 1px 10px 2px rgba(188, 188, 188, 0.178);
+  border: solid 0px white;
+  transition: .1s ease-in;
+}
+#your-name.invalid-field{
+  border: solid 2px red;
+  box-shadow: -3px 1px 10px 3px rgba(255, 2, 2, 0.247);
+}
+
+#your-name:focus{
+  box-shadow: -3px 1px 10px 2px rgba(8, 83, 63, 0.16);
+  border: solid 2px teal;
+}
+
+#your-name::placeholder{
+  letter-spacing: 3px;
+  transition: .5s ease-in;
+}
+
+#your-name::placeholder:focus{
+  color: transparent;
+}
+
+.arrow{
+  box-sizing: border-box;
+}
+
+#arrow-svg{
+  margin-left: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.separator{
+  width: 1px;
+  background-color: rgba(128, 128, 128, 0.371);
+  box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.178);
+  height: 30px;
+  margin: 0 2px 0 10px;
+}
+
+.newtwork-error{
+  text-align: center;
+  color: tomato;
+}
+
+/* after cookie set */
+
+#already-in{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100Vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: gray;
+  overflow: hidden;
+}
+
+#already-in #circle{
+  width: 100Vw;
+  height: 100Vh;
+  background-color: #282c34;
+  animation-name : circlify;
+  animation-duration: .4s;
+  animation-timing-function: ease-out;
+  animation-direction: normal;
+  animation-play-state: running;
+}
+
+@keyframes circlify {
+  from{  
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+  }
+  
+  to{
+    width: 100Vw;
+    height: 100Vw;
+    border-radius: 0;
+  }
+}
+
+#already-in-text{
+  position: absolute;
+  /* opacity: 0; */
+  /* margin: auto; */
+  animation-name: fade;
+  animation-duration: 1.2s;
+  /* animation-delay: .3s; */
+  animation-timing-function: ease-in;
+  animation-direction: normal;
+  animation-play-state: running;
+}
+
+
+@keyframes fade {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
