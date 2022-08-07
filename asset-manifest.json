@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/godchildren-codecamp-collect-names/static/css/main.12d682ca.css",
-    "main.js": "/godchildren-codecamp-collect-names/static/js/main.a41d6c1d.js",
+    "main.css": "/godchildren-codecamp-collect-names/static/css/main.3673215c.css",
+    "main.js": "/godchildren-codecamp-collect-names/static/js/main.38c4a6a7.js",
     "static/media/arrow.svg": "/godchildren-codecamp-collect-names/static/media/arrow.a3801cadb26f25de092bc72a4131c451.svg",
     "index.html": "/godchildren-codecamp-collect-names/index.html",
-    "main.12d682ca.css.map": "/godchildren-codecamp-collect-names/static/css/main.12d682ca.css.map",
-    "main.a41d6c1d.js.map": "/godchildren-codecamp-collect-names/static/js/main.a41d6c1d.js.map"
+    "main.3673215c.css.map": "/godchildren-codecamp-collect-names/static/css/main.3673215c.css.map",
+    "main.38c4a6a7.js.map": "/godchildren-codecamp-collect-names/static/js/main.38c4a6a7.js.map"
   },
   "entrypoints": [
-    "static/css/main.12d682ca.css",
-    "static/js/main.a41d6c1d.js"
+    "static/css/main.3673215c.css",
+    "static/js/main.38c4a6a7.js"
   ]
 }
