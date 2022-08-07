@@ -13,6 +13,8 @@ function App() {
   const [invalidField, setInvalidField] = useState(false)
   const [yourName, setYourName] = useState("")
   const [networkError, setNetworkError] = useState(false)
+  const [clickLocked, setClickLocked] = useState("unlocked")
+  const [serverError, setServerError] = useState(false)
 
   function changeName(e) {
     setYourName(e.target.value)
@@ -23,16 +25,24 @@ function App() {
     setNetworkError(false)
 
     if(yourName.trim().length >= 4){
+      setClickLocked("locked")
       axios.post(API, {name : yourName})
       .then((res) => {
-        console.log(res.data.message)
         setInvalidField(false)
-        setYourName('')
-        SetCookie("nigga-already-done", res.data.message)
-        setCheckCookie(true)
+        if(res.status === 200){
+          setYourName('')
+          SetCookie("nigga-already-done", res.data.message)
+          setCheckCookie(true)
+        }
+        else{
+          setServerError(true)
+          setClickLocked("unlocked")
+        }
+
         })
         .catch((err) => {
           console.log("Error posting data: ", err)
+          setClickLocked("unlocked")
           setNetworkError(true)
         })
     }
@@ -45,10 +55,11 @@ function App() {
   return (
     <div className="App">
       {checkCookie && <div id="already-in"> 
-        <h1 id="already-in-text">Vous êtes déjà inscrit(e) 🙃</h1>
+        <h1 id="already-in-text">Vous êtes inscrit(e) 🙃</h1>
         <div id="circle"></div> 
       </div>}
       
+      {serverError && <div className="error-server">Erreur Serveur. Veuillez reessayer ou contacter un admin</div>}
       {networkError && <h1 className="newtwork-error">Erreur lors du POST. Verifiez votre connexion</h1>}
 
     {!checkCookie && 
@@ -62,7 +73,7 @@ function App() {
         <div className="separator"></div>
         
         <div className={"arrow"}> 
-          <img src={arrow} id="arrow-svg" alt="Valider" title='Valider' required onClick={InputHandler} /> 
+          <img src={arrow} id="arrow-svg" className={clickLocked} alt="Valider" title='Valider' required onClick={InputHandler} /> 
         </div>
 
       </div>
