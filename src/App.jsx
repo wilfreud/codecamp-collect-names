@@ -65,7 +65,7 @@ function App() {
     {!checkCookie && 
       <div className="input-name">
         <input 
-        type="text" name="your-name" id="your-name" placeholder='Votre nom'
+        type="text" name="your-name" id="your-name" placeholder='Prenom & Nom'
         className={invalidField ? "invalid-field" : ""}
         onChange={changeName}
         autoFocus/>
